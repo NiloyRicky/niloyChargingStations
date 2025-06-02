@@ -1,38 +1,209 @@
-.App {
+/* index.css */
+@import url("https://unpkg.com/leaflet@1.9.3/dist/leaflet.css");
+
+
+.container {
+    
+    display: flex;
+  gap: 20px;
+  padding: 10px;
+    
+  }
+  .dashboard {
+  flex: 1;
+  /* dashboard styles */
+}
+.map {
+  flex: 1;
+  /* map styles */
+}
+
+  .heading {
+    text-align: center;
+    margin-bottom:1 rem ;
+    
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+ .editBtn {
+    margin-right: 8px;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .deleteBtn{
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  z-index: 1000;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal-content {
+  background: white;
+  padding: 2rem;
+  
+  margin-top: 10px;
+  width: 300px;
+  border-radius: 8px;
+   border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.modal-content input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+
+.modal-content input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.modal-content button {
+  padding: 6px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:first-of-type {
+  background-color: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-content button:first-of-type:hover {
+  background-color: #218838;
 }
 
-@keyframes App-logo-spin {
+.modal-content button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-content button:last-of-type:hover {
+  background-color: #c82333;
+}
+
+@keyframes slideDown {
   from {
-    transform: rotate(0deg);
+    transform: translateY(-20px);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+
+/*Filter buttons*/
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.filter-container select,
+.filter-container input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.filter-container select:focus,
+.filter-container input:focus {
+  outline: none;
+  border-color: #6366f1; /* Indigo */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+
+
+
+#map {
+  height: 500px;         /* Adjust height as needed */
+  width: 80%;            /* Adjust width as needed */
+  margin: 40px auto;     /* Center horizontally with margin at top and bottom */
+  border: 0.4px solid black;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Dashboard Add and Filter button*/
+.add-filter{
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+.add-filter> button{
+  background-color: green;
+  color: white;
+  padding: 9px;
+  border-radius: 9px;
+  border: 1.5px solid white;
+  cursor: pointer;
 }
