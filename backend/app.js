@@ -18,7 +18,7 @@ const PORT=process.env.PORT || 8000;
 // app.set("view engine","ejs");
 const cors = require("cors");
 app.use(cors({
-  origin: "http://localhost:3000",
+   origin: 'https://endearing-bavarois-316092.netlify.app',
   credentials: true
 }));
 
