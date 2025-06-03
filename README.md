@@ -94,13 +94,13 @@ POST /login – Login with credentials
 GET /logout – Logout and clear cookies
 
 ##Station Routes
-GET /readStation – Get all stations (auth required)
+GET /readStation – Get all stations 
 
-POST /createStation – Add a station (auth required)
+POST /createStation – Add a station 
 
-PUT /updateStation/:id – Update station (auth required)
+PUT /updateStation/:id – Update station 
 
-DELETE /deleteStation/:id – Delete station (auth required)
+DELETE /deleteStation/:id – Delete station 
 
 
 📦 Sample JSON (Station)
