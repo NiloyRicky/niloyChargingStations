@@ -23,11 +23,13 @@ A full-stack web application for managing electric vehicle charging stations. Us
 - React.js
 - CSS / Tailwind (optional)
 - Leaflet.js (for map)
+- In github repo : master branch
 
 ### Backend
 - Node.js + Express.js
 - MongoDB (Mongoose ODM)
 - Cookie-based authentication (using JWT)
+- In github repo : main branch
 
 ---
 
