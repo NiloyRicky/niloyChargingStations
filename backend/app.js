@@ -51,7 +51,7 @@ app.get("/",async(req,res)=>{
 
 //CRUD operation for Stations
 //1. Creating charging sation
- app.post("/createStation",isAuthenticated,async(req,res)=>{
+ app.post("/createStation",async(req,res)=>{
     let {name,
         location:{latitude,longitude},
 status,
@@ -71,13 +71,13 @@ connector
  })
 
 //2.Reading charging station
-app.get("/readStation",isAuthenticated,async(req,res)=>{
+app.get("/readStation",async(req,res)=>{
     let allStations=await stationModel.find();
     res.status(200).json({allStations})
 })
 
 //3.Updating a charging station~
-app.put("/updateStation/:id",isAuthenticated,async(req,res)=>{
+app.put("/updateStation/:id",async(req,res)=>{
 const id=req.params.id;
   let {name,
         location:{latitude,longitude},
@@ -99,7 +99,7 @@ res.status(200).json({updateStation})
 
 
 //4.Deleting charging Stations
-app.delete("/deleteStation/:id",isAuthenticated,async(req,res)=>{
+app.delete("/deleteStation/:id",async(req,res)=>{
     let id=req.params.id;
     const deleteStation=await stationModel.findByIdAndDelete(id);
     res.status(200).json({message:"station deleted",deleteStation})
