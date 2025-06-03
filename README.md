@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+niloyChargingStations
+⚡ EV Charging Stations Dashboard
+A full-stack web application for managing electric vehicle charging stations. Users can register, log in, and add, edit, delete, or filter charging stations. The UI also includes a map view to visualize station locations.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Features
+🔐 User Authentication (Login & Register)
+📍 Add, Edit, Delete Charging Stations
+📊 Filter stations by power, status, and connector type
+🗺️ Integrated Map View using Leaflet.js
+📦 Full CRUD functionality with real-time UI updates
+🎨 Clean and responsive UI
+🏗️ Tech Stack
+Frontend
+React.js
+CSS / Tailwind (optional)
+Leaflet.js (for map)
+In github repo : master branch
+Backend
+Node.js + Express.js
+MongoDB (Mongoose ODM)
+Cookie-based authentication (using JWT)
+In github repo : main branch
+📂 Project Structure
+chargingStations/ ├── frontend/station # React.js (UI) ├── backend/ # Node.js, Express.js, MongoDB └── README.md
 
-## Available Scripts
+Set up Instructions
+1️⃣ Clone the Repository
+git clone https://github.com/NiloyRicky/niloyChargingStations.git
+cd niloyChargingStations
 
-In the project directory, you can run:
+2️⃣ Setup Backend
+cd backend
+npm install
+Create a .env file inside backend/ with the following:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
 
-### `npm start`
+Start the backend:
+npm start
+Runs at: http://localhost:5000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3️⃣ Setup Frontend
+cd ../frontend/station
+npm install
 
-### `npm test`
+Start the React app:
+npm start
+Runs at: http://localhost:3000
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🌐 Deployment Guide
 
-### `npm run build`
+Frontend
+Deploy frontend/ to Netlify or Vercel:
+npm run build
+Upload the /build folder to Netlify.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend
+Deploy backend/ to Render, Railway, or Cyclic.
+Make sure to:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Set up the same .env variables on the hosting platform.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Enable CORS for the deployed frontend domain.
 
-### `npm run eject`
+Set credentials: "include" in all fetch calls from frontend.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔗 API Endpoints
+##Auth Routes
+POST /register – Register new user
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+POST /login – Login with credentials
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+GET /logout – Logout and clear cookies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##Station Routes
+GET /readStation – Get all stations 
 
-## Learn More
+POST /createStation – Add a station 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+PUT /updateStation/:id – Update station 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+DELETE /deleteStation/:id – Delete station 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📦 Sample JSON (Station)
+{
+  "name": "Niloy Station",
+  "location": {
+    "latitude": "22.57",
+    "longitude": "88.36"
+  },
+  "status": "Active",
+  "power": "60kW",
+  "connector": "Type2"
+}
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👨‍💻 Author
+Made with ❤️ by Niloy Mondal
+GitHub
