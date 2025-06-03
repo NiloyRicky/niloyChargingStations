@@ -2,7 +2,7 @@
 
 # ⚡ EV Charging Stations Dashboard
 
-A full-stack web application for managing electric vehicle charging stations. Users can **register**, **log in**, and **add**, **edit**, **delete**, or **filter** charging stations. The UI also includes a **map view** to visualize station locations.
+A full-stack web application for managing charging stations. Users can **register**, **log in**, and **add**, **edit**, **delete**, or **filter** charging stations. The UI also includes a **map view** to visualize station locations.
 
 ---
 
